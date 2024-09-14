@@ -1,0 +1,155 @@
+
+.homePage {
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 50px;
+}
+
+/* Slider Left */
+.sloganBox {
+    display: flex;
+    position: relative;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+}
+
+.sloganContainer h1 {
+    position: relative;
+    z-index: 10px;
+    font-weight: 600;
+    font-size: 50px;
+}
+
+.sloganContainer h1:nth-of-type(1) {
+}
+.sloganContainer h1:nth-of-type(2) {
+}
+.sloganContainer h1:nth-of-type(3) {
+    font-size: 65px;
+    color: #41b294;
+    overflow: hidden;
+    animation: aniText 5s steps(10) infinite;
+}
+.sloganContainer h1:nth-of-type(3) span {
+    margin-left: 5px;
+    font-size: 50px;
+}
+/* btnSlider */
+.btnSlider {
+    padding: 10px 20px;
+}
+
+/* Small box */
+.smallBox {
+    position: absolute;
+    z-index: 1;
+    height: 10%;
+    width: 10%;
+    background-image: radial-gradient(#41b294 10%, transparent 11%),
+    radial-gradient(#41b294 10%, transparent 11%);
+    background-size: 10px 10px;
+}
+
+.smallboxLeftTop {
+    top: 10%;
+    left: 10%;
+    height: 70px;
+    width: 20%;
+}
+
+.sloganBox .smallboxRightTop {
+    top: 0;
+    right: 0;
+    transform: rotate(45deg);
+    background-image: radial-gradient(#41b294 10%, transparent 11%);
+}
+
+.sloganBox .smallboxRightBottom {
+    bottom: 10%;
+    left: 70%;
+    height: 10%;
+    width: 10%;
+    background-image: radial-gradient(#41b294 10%, transparent 11%);
+}
+.sloganBox .doubleBox {
+    left: 74%;
+}
+
+
+/* Mobie */
+@media screen and (max-width: 46.1875em) {
+    .sliderHome {
+        flex-direction: column-reverse;
+    }
+    .sloganContainer h1 {
+        font-size: 40px;
+    }
+}
+
+
+
+/* Animation img slider */
+@keyframes aniSider {
+    0% {
+        opacity: 0;
+        transform: translateY(-5%);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-10%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-15%);
+    }
+}
+
+/* Animation cloud slider */
+@keyframes aniCloud {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+/* Animation message slider */
+@keyframes aniMessage {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(30deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-30deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Animation text */
+@keyframes aniText {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 230px;
+    }
+}
+
+/* Animation shine */
+@keyframes shine {
+    100% {
+        left: 170%;
+    }
+}

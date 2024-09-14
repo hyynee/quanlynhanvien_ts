@@ -1,0 +1,306 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+ 
+model User { 
+  id             String @id @default(uuid())
+  email          String @unique
+  password String 
+
+  role     ROLE     
+  employee Employee?
+
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+
+enum ROLE {
+  ADMIN
+  GUEST
+}
+
+model Employee {
+  id          String   @id @default(uuid())
+  firstName   String
+  lastName    String
+  email       String   @unique
+  dateOfBirth DateTime
+  birthPlace String?
+  identificationCode String
+  dateRange DateTime
+  issuedBy String
+  nationality String
+  religion String?
+  phone       String
+  address     String
+  imageUrl    String
+  sex String
+
+  degrees Degree[]
+  nations Nations[]
+  specialize String?
+  experience String?
+
+  departmentManager DepartmentManager[]
+  typeOfEmployeeId String
+  typeOfEmployee TypeOfEmployee @relation(fields: [typeOfEmployeeId], references: [id], onDelete: Cascade)
+  
+  
+
+  status Status @default(ACTIVE)
+
+  userId String? @unique
+  user   User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+
+  DepartmentId String?
+  department   Department? @relation(fields: [DepartmentId], references: [id], onDelete: Cascade)
+
+ 
+  insurances Insurance[]
+
+  positionId String
+  position   Position? @relation(fields: [positionId], references: [id], onDelete: Cascade)
+
+  disciplines Discipline[]
+  bonuses     Bonus[]
+
+  slaries Salary[]
+
+  projects Project[]
+
+  
+
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+
+enum Status{
+  ACTIVE
+  INACTIVE
+}
+
+model TypeOfEmployee{
+  id String @id @default(uuid())
+  name String
+
+  employees Employee[]
+
+
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+
+
+model Department {
+  id             String @id @default(uuid())
+  departmentName String @unique
+  description    String 
+  phone          String
+
+  departmentManager DepartmentManager?
+ 
+
+
+  employees Employee[]
+
+  projects Project[]
+
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+model DepartmentManager{
+  id String @id @default(uuid())
+  departmentId String @unique
+  department Department @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+  employeeId String
+  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+}
+
+
+
+
+
+model Insurance {
+  id                   String   @id @default(uuid())
+  insuranceCode        String
+  dateRange            DateTime
+  expirationDate       DateTime
+  registrationLocation String
+
+  employeeId String
+  employee   Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+} 
+
+model Position {
+  id           String @id @default(uuid())
+  positionName String @unique
+
+  coefficient Float
+  employees Employee[]
+
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+
+model Discipline {
+  id               String     @id @default(uuid())
+  
+  employees Employee[]  
+  content String 
+
+  fine Float 
+  kindOfDiscipline KindOfDiscipline[]
+
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+
+
+model KindOfDiscipline{
+  id               String     @id @default(uuid())
+  name String @unique
+
+  
+  
+  discipline Discipline[]
+
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+
+
+model Bonus {
+  id               String     @id @default(uuid())
+  
+  employees         Employee []       
+  content          String     
+  prizeMoney       Float
+  
+  kindOfBonus      KindOfBonus[]
+  createAt         DateTime   @default(now())
+  updateAt         DateTime   @updatedAt
+  
+ 
+}
+
+  
+model KindOfBonus{
+  id               String     @id @default(uuid())
+  name String @unique
+
+
+ 
+  bonus Bonus[]
+
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+
+
+model Contract {
+  id                 String   @id @default(uuid())
+  startDay           DateTime
+  endDate            DateTime
+  signDay            DateTime
+  content            String   
+  signedTimes        Int
+  duration           String
+  CoefficientsSalary Float
+
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+
+model Salary {
+  id          String @id @default(uuid())
+
+  basicSalary Float
+  salary Float
+  workday Int
+  allowance Float
+  description String
+
+  employeeId String 
+  employee   Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+ 
+
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+
+
+
+model Project{
+  id String @id @default(uuid())
+  name String
+  startDate DateTime?
+  endDate DateTime?
+  description String?
+
+  employees Employee[]
+  departments Department[]
+
+  status ProjectStatus @default(UNFINISHED)
+
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+
+enum ProjectStatus{
+  FINISHED
+  UNFINISHED
+}
+
+
+
+
+model Experience {
+  id    String @id @default(uuid())
+  field String
+  time  String
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+
+model Degree {
+  id         String   @id @default(uuid())
+  degreeName String @unique
+  employees Employee[]
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+model Nations {
+  id         String   @id @default(uuid())
+  name String @unique
+  employees Employee[]
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+
+
+
+model PositionReceived {
+  id           String @id @default(uuid())
+  positionName String
+  companyName  String
+  time         String
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}

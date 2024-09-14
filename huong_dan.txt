@@ -1,0 +1,10 @@
+Các bước chạy chương trình:
+1: Cài đặt nodejs
+2: Kiểm tra đã cài đặt nodejs bằng các vào terminal chạy dòng lệnh npm --version
+3: Mở projects trong vscode sau đó vào terminal của vscode chạy dòng lệnh npm i
+4: Chạy tiếp câu lệnh npm prisma generate trong terminal của vs code
+5: Chạy chương trình lên bằng câu lệnh npm run dev 
+
+
+** npx prisma db push
+** npx prisma studio
