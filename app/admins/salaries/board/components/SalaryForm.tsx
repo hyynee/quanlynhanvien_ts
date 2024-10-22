@@ -18,8 +18,8 @@ const formSchema = z.object({
     employeeId: z.string().min(1, {
         message: "Vui lòng chọn 1 nhân viên để tính lương"
     }),
-    workday: z.string().min(1, {
-        message: "Vui lòng nhập số ngày công"
+    workday: z.number().min(1, {
+        message: "Số ngày công không được âm"
     }),
     allowance: z.string(),
     description: z.string().min(1, {
@@ -47,7 +47,7 @@ const SalaryForm = ({
         defaultValues: {
             departmentId: "",
             employeeId: "",
-            workday: "",
+            workday: 0,
             allowance: '0',
             description: "",
         },
@@ -159,23 +159,27 @@ const SalaryForm = ({
                                 )}
                             />
                             <FormField
-                                control={form.control}
-                                name="workday"
-                                render={({ field }) => (
-                                    <FormItem className="flex flex-col gap-2">
-                                        <FormLabel>Số ngày công*</FormLabel>
-                                        <FormControl>
-                                            <input
-                                                className="border w-full rounded-md px-3 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-sky-300"
-                                                type="number" {...field}
-                                                placeholder="..."
-                                            />
-                                        </FormControl>
+  control={form.control}
+  name="workday"
+  render={({ field }) => (
+    <FormItem className="flex flex-col gap-2">
+      <FormLabel>Số ngày công*</FormLabel>
+      <FormControl>
+        <input
+          className="border w-full rounded-md px-3 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-sky-300"
+          type="number" 
+          {...field}
+          value={field.value || ''}
+          onChange={(e) => field.onChange(e.target.valueAsNumber)} // Chuyển đổi thành số
+          placeholder="..."
+        />
+      </FormControl>
 
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+
                             <FormField
                                 control={form.control}
                                 name="allowance"

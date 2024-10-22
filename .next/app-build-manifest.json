@@ -1,16 +1,16 @@
 {
   "pages": {
-    "/(site)/(routes)/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/(site)/(routes)/page.css",
-      "static/chunks/app/(site)/(routes)/page.js"
-    ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
+    ],
+    "/(site)/(routes)/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(site)/(routes)/page.css",
+      "static/chunks/app/(site)/(routes)/page.js"
     ],
     "/admins/page": [
       "static/chunks/webpack.js",
@@ -34,10 +34,140 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(auth)/(routes)/authentication/page.js"
     ],
-    "/not-found": [
+    "/admins/employees/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
+      "static/chunks/app/admins/employees/layout.js"
+    ],
+    "/admins/employees/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/employees/loading.js"
+    ],
+    "/admins/employees/nations/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/employees/nations/page.js"
+    ],
+    "/admins/employees/nations/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/employees/nations/layout.js"
+    ],
+    "/admins/employees/nations/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/employees/nations/loading.js"
+    ],
+    "/admins/employees/degrees/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/employees/degrees/page.js"
+    ],
+    "/admins/employees/degrees/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/employees/degrees/layout.js"
+    ],
+    "/admins/employees/degrees/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/employees/degrees/loading.js"
+    ],
+    "/admins/salaries/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/salaries/layout.js"
+    ],
+    "/admins/salaries/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/salaries/loading.js"
+    ],
+    "/admins/salaries/board/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/salaries/board/page.js"
+    ],
+    "/admins/salaries/board/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/salaries/board/layout.js"
+    ],
+    "/admins/salaries/board/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/salaries/board/loading.js"
+    ],
+    "/admins/salaries/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/salaries/page.js"
+    ],
+    "/admins/departments/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/departments/page.js"
+    ],
+    "/admins/departments/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/departments/layout.js"
+    ],
+    "/admins/departments/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/departments/loading.js"
+    ],
+    "/admins/projects/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/projects/page.js"
+    ],
+    "/admins/projects/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/projects/layout.js"
+    ],
+    "/admins/projects/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/projects/loading.js"
+    ],
+    "/admins/employees/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/employees/page.js"
+    ],
+    "/admins/employees/add/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/employees/add/page.js"
+    ],
+    "/admins/employees/add/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/employees/add/layout.js"
+    ],
+    "/admins/employees/add/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/employees/add/loading.js"
+    ],
+    "/admins/employees/[employeeId]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/employees/[employeeId]/page.js"
+    ],
+    "/admins/employees/[employeeId]/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/employees/[employeeId]/layout.js"
+    ],
+    "/admins/employees/[employeeId]/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admins/employees/[employeeId]/loading.js"
     ]
   }
 }

@@ -1,4 +1,4 @@
-// File: C:\Users\Administrator\Desktop\hrm_update\hrm\app\(auth)\(routes)\layout.tsx
+// File: C:\Users\Administrator\Desktop\backup_hrm_update\quanlynhanvien_ts\app\(auth)\(routes)\layout.tsx
 import * as entry from '../../../../../app/(auth)/(routes)/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

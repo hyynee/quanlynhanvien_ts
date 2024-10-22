@@ -1,4 +1,4 @@
-// File: C:\Users\Administrator\Desktop\hrm_update\hrm\app\admins\page.tsx
+// File: C:\Users\Administrator\Desktop\backup_hrm_update\quanlynhanvien_ts\app\admins\page.tsx
 import * as entry from '../../../../app/admins/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

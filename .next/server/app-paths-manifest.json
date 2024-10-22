@@ -1,7 +1,11 @@
 {
-  "/not-found": "app/not-found.js",
-  "/(site)/(routes)/page": "app/(site)/(routes)/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
-  "/(auth)/(routes)/authentication/page": "app/(auth)/(routes)/authentication/page.js",
-  "/admins/page": "app/admins/page.js"
+  "/admins/page": "app/admins/page.js",
+  "/admins/salaries/page": "app/admins/salaries/page.js",
+  "/admins/departments/page": "app/admins/departments/page.js",
+  "/admins/projects/page": "app/admins/projects/page.js",
+  "/admins/employees/page": "app/admins/employees/page.js",
+  "/admins/employees/add/page": "app/admins/employees/add/page.js",
+  "/admins/employees/[employeeId]/page": "app/admins/employees/[employeeId]/page.js"
 }

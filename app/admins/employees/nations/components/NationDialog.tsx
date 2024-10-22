@@ -25,17 +25,11 @@ interface NationDialogProps {
     variant: "create" | "edit" | "view" | "delete",
     data?: any
 }
-
-
 const formSchema = z.object({
-    name: z.string().min(1, {
-        message: "Tên chức vụ không được để trống"
-    }),
+    name: z.string()
+        .min(1, { message: "Tên dân tộc không được để trống" })
+        .regex(/^[a-zA-ZÀ-ỹ\s]+$/, { message: "Tên dân tộc không được chứa số hoặc ký tự đặc biệt" }),
 })
-
-
-
-
 
 export default function NationDialog({
     isOpen,

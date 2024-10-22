@@ -32,11 +32,16 @@ const formSchema = z.object({
         message: "Tên phòng ban không được để trống"
     }),
     description: z.string(),
-    phone: z.string().min(1, {
-        message: "Số điện thoại không được để trống"
-    }),
+    phone: z.string()
+        .min(1, {
+            message: "Số điện thoại không được để trống"
+        })
+        .regex(/^\d{10}$/, {
+            message: "Số điện thoại phải bao gồm 10 chữ số"
+        }),
     managerId: z.string(),
 })
+
 
 
 
